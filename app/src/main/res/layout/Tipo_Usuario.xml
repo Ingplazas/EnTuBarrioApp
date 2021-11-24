@@ -10,7 +10,61 @@
         android:id="@+id/imageView2"
         android:layout_width="120dp"
         android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
         android:src="@drawable/entubarrio_logo2"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="71dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="245dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="83dp"
+        android:text="Elije El Tipo de Cuenta:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="141dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="190dp"
+        android:text="Button"
+        app:backgroundTint="#CA8501"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="141dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
+        android:text="Button"
+        app:backgroundTint="#5D5587"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="30dp"
+        android:rotation="25"
+        android:rotationY="-17"
+        android:src="@drawable/flag_3574340_960_720"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
