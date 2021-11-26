@@ -36,9 +36,11 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="190dp"
+        android:layout_marginBottom="50dp"
         android:onClick="opCliente"
         android:text="@string/bt_TipoCliente"
         app:backgroundTint="#CA8501"
+        app:layout_constraintBottom_toTopOf="@+id/bt_TipoNegocio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_TipodeCuenta" />
@@ -48,14 +50,14 @@
         android:layout_width="141dp"
         android:layout_height="40dp"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="80dp"
+        android:layout_marginBottom="220dp"
         android:onClick="opNegocio"
         android:text="@string/bt_TipoNegocio"
         app:backgroundTint="#5D5587"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_TipoCliente" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/im_Bandera"

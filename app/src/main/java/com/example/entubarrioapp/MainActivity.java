@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         etUsuario = findViewById(R.id.et_Usuario);
         etPassword = findViewById(R.id.et_Password);
     }
-/*
+
     //Método para el Botón Ingresar
     public void ingresar(View view) {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "enTuBarrio", null, 1);
@@ -38,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
                     ("SELECT * FROM Negocio WHERE nombreN ='" + usuario + "' AND passwordN ='" + password + "';", null);
 
             if(filaC.moveToFirst()) {
-                Intent ingreso = new Intent(this, IngresoActivity.class);
+                Intent ingreso = new Intent(this, MainActivity.class);
                 ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
                 db.close();
             } else if(filaN.moveToFirst()) {
-                Intent ingreso = new Intent(this, IngresoActivity.class);
+                Intent ingreso = new Intent(this, MainActivity.class);
                 ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
                 db.close();
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Debes escribir un Usuario y su Contraseña", Toast.LENGTH_SHORT).show();
         }
-    }*/
+    }
 
     //Método para el Botón Registrarse
     public void registrarse(View view) {
