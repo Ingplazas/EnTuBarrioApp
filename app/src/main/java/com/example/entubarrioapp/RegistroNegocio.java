@@ -10,14 +10,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity3 extends AppCompatActivity {
+public class RegistroNegocio extends AppCompatActivity {
 
     private EditText etNombreN, etDireccionN, etTelefonoN, etPaginaWebN, etPasswordN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_registro_negocio);
 
         etNombreN = findViewById(R.id.et_NombreNegocio);
         etDireccionN = findViewById(R.id.et_DireccionNegocio);
@@ -57,7 +57,7 @@ public class MainActivity3 extends AppCompatActivity {
 
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
 
-            Intent cambio = new Intent(this, MainActivity.class);
+            Intent cambio = new Intent(this, InicioSesion.class);
             startActivity(cambio);
         } else {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();

@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnTuBarrioApp" >
         <activity
-            android:name=".MainActivity3"
+            android:name=".RegistroNegocio"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".RegistroCliente"
             android:exported="false" />
         <activity
-            android:name=".MainActivity4"
+            android:name=".OpcionRegistro"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".InicioSesion"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

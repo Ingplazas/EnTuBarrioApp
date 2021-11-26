@@ -10,14 +10,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class InicioSesion extends AppCompatActivity {
 
     private EditText etUsuario, etPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_inicio_sesion);
 
         etUsuario = findViewById(R.id.et_Usuario);
         etPassword = findViewById(R.id.et_Password);
@@ -38,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
                     ("SELECT * FROM Negocio WHERE nombreN ='" + usuario + "' AND passwordN ='" + password + "';", null);
 
             if(filaC.moveToFirst()) {
-                Intent ingreso = new Intent(this, MainActivity.class);
+                Intent ingreso = new Intent(this, InicioSesion.class);
                 ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
                 db.close();
             } else if(filaN.moveToFirst()) {
-                Intent ingreso = new Intent(this, MainActivity.class);
+                Intent ingreso = new Intent(this, InicioSesion.class);
                 ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
                 db.close();
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Método para el Botón Registrarse
     public void registrarse(View view) {
-        Intent registro = new Intent(this, MainActivity2.class);
+        Intent registro = new Intent(this, OpcionRegistro.class);
         startActivity(registro);
     }
 }
