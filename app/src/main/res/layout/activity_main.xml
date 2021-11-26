@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/im_Logo"
         android:layout_width="327dp"
         android:layout_height="180dp"
         android:layout_marginStart="42dp"
@@ -19,56 +19,58 @@
         app:srcCompat="@drawable/entubarrio_logo2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_Usuario"
         android:layout_width="221dp"
         android:layout_height="35dp"
         android:layout_marginStart="95dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="95dp"
         android:ems="10"
+        android:hint="@string/et_Usuario"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/im_Logo" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/et_Password"
         android:layout_width="221dp"
         android:layout_height="35dp"
         android:layout_marginStart="95dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="95dp"
         android:ems="10"
+        android:hint="@string/et_Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/et_Usuario" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_Ingresar"
         android:layout_width="121dp"
         android:layout_height="40dp"
         android:layout_marginStart="145dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="145dp"
         android:alpha="50"
-        android:text="Button"
+        android:text="@string/bt_Ingresar"
         app:backgroundTint="#2F72B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_Password" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bt_Registrar"
         android:layout_width="121dp"
         android:layout_height="40dp"
         android:layout_marginStart="145dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="145dp"
         android:alpha="50"
-        android:text="Button"
+        android:text="@string/bt_Registrar"
+        app:backgroundTint="#FF9F04"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_Ingresar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

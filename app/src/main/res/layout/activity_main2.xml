@@ -7,21 +7,21 @@
     tools:context=".MainActivity2">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/im_Logo2"
         android:layout_width="120dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/entubarrio_logo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_TipodeCuenta"
         android:layout_width="245dp"
         android:layout_height="95dp"
         android:layout_marginStart="83dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="83dp"
         android:text="Elije El Tipo de Cuenta:"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -30,36 +30,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bt_TipoCliente"
         android:layout_width="141dp"
         android:layout_height="40dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="190dp"
-        android:text="Button"
+        android:text="@string/bt_TipoCliente"
         app:backgroundTint="#CA8501"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_TipodeCuenta" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/bt_TipoNegocio"
         android:layout_width="141dp"
         android:layout_height="40dp"
         android:layout_marginStart="190dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="80dp"
-        android:text="Button"
+        android:text="@string/bt_TipoNegocio"
         app:backgroundTint="#5D5587"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_TipoCliente" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/im_Bandera"
         android:layout_width="77dp"
         android:layout_height="77dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
         android:rotation="25"
         android:rotationY="-17"

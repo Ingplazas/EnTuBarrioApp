@@ -1,12 +1,29 @@
 <resources>
     <string name="app_name">EnTuBarrioApp</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+
+    <string name="et_Usuario">Ingrese Usuario</string>
+    <string name="et_Password">Ingrese Contraseña</string>
+
+    <string name="bt_Ingresar">Iniciar</string>
+    <string name="bt_Registrar">Registrarse</string>
+
+    <string name="bt_TipoCliente">Cliente</string>
+    <string name="bt_TipoNegocio">Negocio</string>
+
+    <string name="bt_DatosNegocio">Guardar</string>
+    <string name="bt_DatosCliente">Guardar</string>
+
+    <string name="et_NombreNegocio">Nombre</string>
+    <string name="et_DireccionNegocio">Direccion</string>
+    <string name="et_TelefonoNegocio">Telefono</string>
+    <string name="et_PgWebNegocio">Pagina Web</string>
+    <string name="et_PasswordNegocio">Password</string>
+
+    <string name="et_NombreCliente">Nombre Usuario</string>
+    <string name="et_DireccionCliente">Direccion</string>
+    <string name="et_TelefonoCliente">Telefono</string>
+    <string name="et_EmailCliente">Correo Electronico</string>
+    <string name="et_PasswordCliente">Contraseña</string>
+
 </resources>
