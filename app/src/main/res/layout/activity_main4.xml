@@ -11,14 +11,16 @@
       android:layout_width="141dp"
       android:layout_height="50dp"
       android:layout_marginStart="75dp"
+      android:layout_marginTop="30dp"
       android:layout_marginEnd="75dp"
-      android:layout_marginBottom="76dp"
+      android:layout_marginBottom="85dp"
       android:onClick="registrarC"
       android:text="@string/bt_DatosCliente"
       app:backgroundTint="#705E80"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/et_PasswordCliente" />
 
   <EditText
       android:id="@+id/et_PasswordCliente"
@@ -27,16 +29,12 @@
       android:layout_marginStart="75dp"
       android:layout_marginTop="20dp"
       android:layout_marginEnd="75dp"
-      android:layout_marginBottom="20dp"
       android:ems="10"
       android:hint="@string/et_PasswordCliente"
       android:inputType="textPassword"
-      app:layout_constraintBottom_toTopOf="@+id/bt_DatosCliente"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/et_EmailCliente"
-      app:layout_constraintVertical_bias="0.051" />
+      app:layout_constraintTop_toBottomOf="@+id/et_EmailCliente" />
 
   <EditText
       android:id="@+id/et_TelefonoCliente"
@@ -112,7 +110,7 @@
       android:layout_marginStart="83dp"
       android:layout_marginTop="140dp"
       android:layout_marginEnd="83dp"
-      android:text="¡Bienvenido! Ingresa Tus Datos"
+      android:text="Bienvenido   Ingresa Tus Datos"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
       android:textSize="28sp"

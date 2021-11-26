@@ -3,7 +3,7 @@
     <string name="title_activity_login">LoginActivity</string>
 
     <string name="et_Usuario"> Ingrese Usuario</string>
-    <string name="et_Password"> Ingrese Contraseña</string>
+    <string name="et_Password"> Ingrese Password</string>
 
     <string name="bt_Ingresar">Iniciar</string>
     <string name="bt_Registrar">Registrarse</string>
@@ -24,6 +24,6 @@
     <string name="et_DireccionCliente"> Direccion</string>
     <string name="et_TelefonoCliente"> Telefono</string>
     <string name="et_EmailCliente"> Correo Electronico</string>
-    <string name="et_PasswordCliente"> Contraseña</string>
+    <string name="et_PasswordCliente"> Password</string>
 
 </resources>
