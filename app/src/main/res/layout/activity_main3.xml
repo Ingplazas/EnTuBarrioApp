@@ -125,6 +125,7 @@
         android:layout_marginStart="75dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="75dp"
+        android:onClick="registrarN"
         android:text="@string/bt_DatosNegocio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

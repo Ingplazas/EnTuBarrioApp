@@ -13,6 +13,7 @@
       android:layout_marginStart="75dp"
       android:layout_marginTop="30dp"
       android:layout_marginEnd="75dp"
+      android:onClick="registrarC"
       android:text="@string/bt_DatosCliente"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
