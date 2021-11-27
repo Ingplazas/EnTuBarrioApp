@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".RegistroCliente">
 
+  <include android:id="@+id/toolbar"
+      layout="@layout/toolbar" />
   <Button
       android:id="@+id/bt_DatosCliente"
       android:layout_width="141dp"
@@ -26,9 +28,7 @@
       android:id="@+id/et_PasswordCliente"
       android:layout_width="261dp"
       android:layout_height="40dp"
-      android:layout_marginStart="75dp"
       android:layout_marginTop="20dp"
-      android:layout_marginEnd="75dp"
       android:ems="10"
       android:hint="@string/et_PasswordCliente"
       android:inputType="textPassword"
@@ -40,14 +40,11 @@
       android:id="@+id/et_TelefonoCliente"
       android:layout_width="261dp"
       android:layout_height="40dp"
-      android:layout_marginStart="75dp"
       android:layout_marginTop="20dp"
-      android:layout_marginEnd="75dp"
       android:ems="10"
       android:hint="@string/et_TelefonoCliente"
       android:inputType="phone"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/et_DireccionCliente" />
 
@@ -55,14 +52,11 @@
       android:id="@+id/et_DireccionCliente"
       android:layout_width="261dp"
       android:layout_height="40dp"
-      android:layout_marginStart="75dp"
       android:layout_marginTop="20dp"
-      android:layout_marginEnd="75dp"
       android:ems="10"
       android:hint="@string/et_DireccionCliente"
       android:inputType="textPostalAddress"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/et_NombreCliente" />
 
@@ -70,14 +64,11 @@
       android:id="@+id/et_NombreCliente"
       android:layout_width="261dp"
       android:layout_height="40dp"
-      android:layout_marginStart="75dp"
       android:layout_marginTop="50dp"
-      android:layout_marginEnd="75dp"
       android:ems="10"
       android:hint="@string/et_NombreCliente"
       android:inputType="textPersonName"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/tv_IngreseCliente" />
 
@@ -86,7 +77,7 @@
       android:layout_width="120dp"
       android:layout_height="70dp"
       android:layout_marginStart="30dp"
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="60dp"
       android:src="@drawable/entubarrio_logo2"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -95,7 +86,7 @@
       android:id="@+id/im_Bandera4"
       android:layout_width="77dp"
       android:layout_height="77dp"
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="60dp"
       android:layout_marginEnd="30dp"
       android:rotation="25"
       android:rotationY="-17"
@@ -107,9 +98,7 @@
       android:id="@+id/tv_IngreseCliente"
       android:layout_width="245dp"
       android:layout_height="95dp"
-      android:layout_marginStart="83dp"
       android:layout_marginTop="140dp"
-      android:layout_marginEnd="83dp"
       android:text="Bienvenido   Ingresa Tus Datos"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -122,9 +111,7 @@
       android:id="@+id/et_EmailCliente"
       android:layout_width="261dp"
       android:layout_height="40dp"
-      android:layout_marginStart="75dp"
       android:layout_marginTop="20dp"
-      android:layout_marginEnd="75dp"
       android:ems="10"
       android:hint="@string/et_EmailCliente"
       android:inputType="textEmailAddress"

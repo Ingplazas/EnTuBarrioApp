@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class RegistroNegocio extends AppCompatActivity {
@@ -24,6 +25,17 @@ public class RegistroNegocio extends AppCompatActivity {
         etTelefonoN = findViewById(R.id.et_TelefonoNegocio);
         etPaginaWebN = findViewById(R.id.et_PgWebNegocio);
         etPasswordN = findViewById(R.id.et_PasswordNegocio);
+
+
+        ImageView Atras = findViewById(R.id.ib_Atras);
+
+        Atras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegistroNegocio.this, OpcionRegistro.class));
+
+            }
+        });
     }
 
     //Método para Registrar Negocios

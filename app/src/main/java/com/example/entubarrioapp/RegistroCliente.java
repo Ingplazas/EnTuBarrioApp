@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class RegistroCliente extends AppCompatActivity {
@@ -24,6 +25,17 @@ public class RegistroCliente extends AppCompatActivity {
         etTelefonoC = findViewById(R.id.et_TelefonoCliente);
         etEmailC = findViewById(R.id.et_EmailCliente);
         etPasswordC = findViewById(R.id.et_PasswordCliente);
+
+
+        ImageView Atras = findViewById(R.id.ib_Atras);
+
+        Atras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegistroCliente.this, OpcionRegistro.class));
+
+            }
+        });
     }
 
     //Método para Registrar Clientes
