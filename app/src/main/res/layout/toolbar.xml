@@ -18,4 +18,30 @@
         android:layout_centerVertical="true"
         android:background="#FFFFFF"
         app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@id/ib_Atras"
+        android:layout_marginStart="46dp"
+        app:srcCompat="@drawable/entubarrio_logo" />
+
+    <ImageView
+        android:id="@+id/im_Bandera"
+        android:layout_width="45dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="46dp"
+        android:rotation="25"
+        android:rotationY="-17"
+        android:src="@drawable/flag_3574340_960_720" />
+
+    <ImageButton
+        android:id="@+id/ib_Menu"
+        android:layout_width="45dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:background="#FFFFFF"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
 </RelativeLayout>

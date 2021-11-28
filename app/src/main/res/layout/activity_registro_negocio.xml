@@ -8,38 +8,17 @@
 
     <include android:id="@+id/toolbar"
         layout="@layout/toolbar" />
+
     <TextView
         android:id="@+id/tv_IngreseNegocio"
         android:layout_width="245dp"
         android:layout_height="95dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         android:text="Ingresa Los Datos De Tu Negocio"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/im_Bandera2"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="30dp"
-        android:rotation="25"
-        android:rotationY="-17"
-        android:src="@drawable/flag_3574340_960_720"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/im_Logo3"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/entubarrio_logo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
