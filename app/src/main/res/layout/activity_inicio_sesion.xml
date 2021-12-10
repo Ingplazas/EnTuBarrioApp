@@ -37,6 +37,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:alpha="50"
+        android:onClick="ingresar"
         android:text="@string/bt_Ingresar"
         app:backgroundTint="#2F72B0"
         app:layout_constraintEnd_toEndOf="parent"

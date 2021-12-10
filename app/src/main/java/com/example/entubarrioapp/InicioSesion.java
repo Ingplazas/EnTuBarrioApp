@@ -44,16 +44,15 @@ public class InicioSesion extends AppCompatActivity {
                 Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
                 db.close();
             } else if(filaN.moveToFirst()) {
-                Intent ingreso = new Intent(this, InicioSesion.class);
-                ingreso.putExtra("usuario", etUsuario.getText().toString());
-                startActivity(ingreso);
+                Intent ingresoN = new Intent(this, CrudProducto.class);//pendiente
+                ingresoN.putExtra("usuario", etUsuario.getText().toString());
+                startActivity(ingresoN);
                 Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
                 db.close();
             } else {
                 Toast.makeText(this, "Error: Usuario y/o Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
                 db.close();
             }
-
         } else {
             Toast.makeText(this, "Debes escribir un Usuario y su Contraseña", Toast.LENGTH_SHORT).show();
         }
