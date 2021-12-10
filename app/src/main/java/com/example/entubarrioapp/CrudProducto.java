@@ -1,6 +1,7 @@
 package com.example.entubarrioapp;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -263,5 +264,12 @@ public class CrudProducto extends AppCompatActivity {
             lv_producto.setVisibility(View.INVISIBLE);
         }
     }
+
+    public void Regresar(View V)
+    {
+        Intent regresar= new Intent(this,InicioSesion.class);
+        startActivity(regresar);
+    }
+
 
 }
