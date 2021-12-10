@@ -39,13 +39,13 @@ public class InicioSesion extends AppCompatActivity {
 
             if(filaC.moveToFirst()) {
                 Intent ingreso = new Intent(this, InicioSesion.class);
-                ingreso.putExtra("usuario", etUsuario.getText().toString());
+                //ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
                 Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
                 db.close();
             } else if(filaN.moveToFirst()) {
                 Intent ingresoN = new Intent(this, CrudProducto.class);//pendiente
-                ingresoN.putExtra("usuario", etUsuario.getText().toString());
+                //ingresoN.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingresoN);
                 Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
                 db.close();
