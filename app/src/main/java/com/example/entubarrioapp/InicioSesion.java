@@ -44,10 +44,9 @@ public class InicioSesion extends AppCompatActivity {
                 Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
                 db.close();
             } else if(filaN.moveToFirst()) {
-                Intent ingreso = new Intent(this, InicioSesion.class);
+                Intent ingreso = new Intent(this, CrudProducto.class);
                 ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
-                Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
                 db.close();
             } else {
                 Toast.makeText(this, "Error: Usuario y/o Contraseña Incorrecta", Toast.LENGTH_SHORT).show();

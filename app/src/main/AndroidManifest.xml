@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnTuBarrioApp" >
         <activity
+            android:name=".CrudProducto"
+            android:exported="false" />
+        <activity
             android:name=".RegistroNegocio"
             android:exported="false" />
         <activity

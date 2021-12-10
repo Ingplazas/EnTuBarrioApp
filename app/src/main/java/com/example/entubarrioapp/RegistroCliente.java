@@ -71,6 +71,7 @@ public class RegistroCliente extends AppCompatActivity {
 
             Intent cambio = new Intent(this, InicioSesion.class);
             startActivity(cambio);
+            finish();
         } else {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
