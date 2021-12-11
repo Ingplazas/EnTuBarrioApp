@@ -1,4 +1,4 @@
-package com.example.entubarrioapp;
+package com.example.entubarrioapp.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,9 +13,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Cliente(nombreC text, direccionC text, telefonoC text, emailC text, passwordC text);");
-        db.execSQL("CREATE TABLE Negocio(nombreN text, direccionN text, telefonoN text, pagWebN text, passwordN text);");
-        db.execSQL("CREATE TABLE Producto(codigoP int primary key, nombreP text, precioP double);");
+        db.execSQL("CREATE TABLE Cliente(nombreC TEXT, direccionC TEXT, telefonoC TEXT, emailC TEXT, passwordC TEXT);");
+        db.execSQL("CREATE TABLE Negocio(nombreN TEXT, direccionN TEXT, telefonoN TEXT, pagWebN TEXT, passwordN TEXT);");
+        db.execSQL("CREATE TABLE Producto(codigoP TEXT PRIMARY KEY, categoriaP TEXT, nombreP TEXT, descripcionP TEXT, precioP REAL, cantidadP INTEGER);");
     }
 
     @Override

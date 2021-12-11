@@ -1,4 +1,4 @@
-package com.example.entubarrioapp;
+package com.example.entubarrioapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.entubarrioapp.Database.AdminSQLiteOpenHelper;
+import com.example.entubarrioapp.R;
 
 public class InicioSesion extends AppCompatActivity {
 
@@ -33,25 +36,32 @@ public class InicioSesion extends AppCompatActivity {
 
         if(!usuario.isEmpty() && !password.isEmpty()) {
             Cursor filaC = db.rawQuery
-                    ("SELECT * FROM Cliente WHERE emailC ='" + usuario + "' AND passwordC ='" + password + "';", null);
+                    ("SELECT * FROM Cliente WHERE nombreC ='" + usuario + "' AND passwordC ='" + password + "';", null);
             Cursor filaN = db.rawQuery
                     ("SELECT * FROM Negocio WHERE nombreN ='" + usuario + "' AND passwordN ='" + password + "';", null);
 
             if(filaC.moveToFirst()) {
-                Intent ingreso = new Intent(this, InicioSesion.class);
-                //ingreso.putExtra("usuario", etUsuario.getText().toString());
+                Intent ingreso = new Intent(this, IngresoCliente.class);
+                ingreso.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingreso);
                 Toast.makeText(this, "Sesion Iniciada", Toast.LENGTH_SHORT).show();
-                db.close();
+                etUsuario.setText("");
+                etPassword.setText("");
             } else if(filaN.moveToFirst()) {
                 Intent ingresoN = new Intent(this, CrudProducto.class);
                 ingresoN.putExtra("usuario", etUsuario.getText().toString());
                 startActivity(ingresoN);
-                db.close();
+                etUsuario.setText("");
+                etPassword.setText("");
             } else {
+                etUsuario.setText("");
+                etPassword.setText("");
                 Toast.makeText(this, "Error: Usuario y/o Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
-                db.close();
             }
+            filaC.close();
+            filaN.close();
+            db.close();
+
         } else {
             Toast.makeText(this, "Debes escribir un Usuario y su Contraseña", Toast.LENGTH_SHORT).show();
         }

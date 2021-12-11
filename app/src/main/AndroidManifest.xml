@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.entubarrioapp" >
+    package="com.example.entubarrioapp">
 
     <application
         android:allowBackup="true"
@@ -8,22 +8,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EnTuBarrioApp" >
+        android:theme="@style/Theme.EnTuBarrioApp">
         <activity
-            android:name=".CrudProducto"
+            android:name=".Activity.ClienteProductos"
             android:exported="false" />
         <activity
-            android:name=".RegistroNegocio"
+            android:name=".Activity.ClienteNegocios"
             android:exported="false" />
         <activity
-            android:name=".RegistroCliente"
+            android:name=".Activity.IngresoCliente"
             android:exported="false" />
         <activity
-            android:name=".OpcionRegistro"
+            android:name=".Activity.CrudProducto"
             android:exported="false" />
         <activity
-            android:name=".InicioSesion"
-            android:exported="true" >
+            android:name=".Activity.RegistroNegocio"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RegistroCliente"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.OpcionRegistro"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.InicioSesion"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,12 +1,10 @@
-package com.example.entubarrioapp;
+package com.example.entubarrioapp.Activity;
 
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,7 +17,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.entubarrioapp.modelo.Producto;
+import com.example.entubarrioapp.Database.AdminSQLiteOpenHelper;
+import com.example.entubarrioapp.R;
+import com.example.entubarrioapp.Entidades.Producto;
 
 import java.util.ArrayList;
 
@@ -58,8 +58,8 @@ public class CrudProducto extends AppCompatActivity {
         Producto p=null;
         if(fila.moveToNext()){
             p=new Producto();
-            p.setNombreP(fila.getString(1));
-            p.setPrecioP(fila.getDouble(2));
+            p.setNombreP(fila.getString(2));
+            p.setPrecioP(fila.getFloat(4));
         }
         db.close();
         return p;
@@ -107,9 +107,9 @@ public class CrudProducto extends AppCompatActivity {
                     Toast.makeText(CrudProducto.this, "Debes digitar info en todos los campos", Toast.LENGTH_LONG).show();
                 } else {
                     Producto p= new Producto();
-                    p.setCodigoP(Integer.parseInt(etcodigo.getText().toString()));
+                    p.setCodigoP(/*Integer.parseInt(*/etcodigo.getText().toString());
                     p.setNombreP(etnombre.getText().toString());
-                    p.setPrecioP(Double.parseDouble(etprecio.getText().toString()));
+                    p.setPrecioP(Float.parseFloat(etprecio.getText().toString()));
                     long res= agregarProducto(p);
                     if(res!=-1){
                         StringBuffer buffer=new StringBuffer();
@@ -183,7 +183,7 @@ public class CrudProducto extends AppCompatActivity {
         registro.put("codigoP", p.getCodigoP());
         registro.put("nombreP", p.getNombreP());
         registro.put("precioP", p.getPrecioP());
-        int res=db.update("Producto", registro, "codigoP=?",new String[]{Integer.toString(p.getCodigoP())});
+        int res=db.update("Producto", registro, "codigoP=?",new String[]{/*Integer.toString(*/p.getCodigoP()});
         db.close();
         return res;
     }
@@ -198,9 +198,9 @@ public class CrudProducto extends AppCompatActivity {
                         Toast.makeText(CrudProducto.this, "Debes digitar info en todos los campos", Toast.LENGTH_LONG).show();
                     }else {
                         Producto p=new Producto();
-                        p.setCodigoP(Integer.parseInt(etcodigo.getText().toString()));
+                        p.setCodigoP(/*Integer.parseInt(*/etcodigo.getText().toString());
                         p.setNombreP(etnombre.getText().toString());
-                        p.setPrecioP(Double.parseDouble(etprecio.getText().toString()));
+                        p.setPrecioP(Float.parseFloat(etprecio.getText().toString()));
                         int res=modificarProducto(p);
                         if(res==1) {
                             StringBuffer buffer = new StringBuffer();
@@ -230,9 +230,9 @@ public class CrudProducto extends AppCompatActivity {
         ArrayList<Producto>lista=new ArrayList<Producto>();
         while(datos.moveToNext()) {
             Producto p = new Producto();
-            p.setCodigoP(datos.getInt(0));
-            p.setNombreP(datos.getString(1));
-            p.setPrecioP(datos.getDouble(2));
+            p.setCodigoP(datos.getString(0));
+            p.setNombreP(datos.getString(2));
+            p.setPrecioP(datos.getFloat(4));
             lista.add(p);
         }
         db.close();
@@ -251,7 +251,7 @@ public class CrudProducto extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Producto p=lista.get(position);
-                    etcodigo.setText(Integer.toString(p.getCodigoP()));
+                    etcodigo.setText(/*Integer.toString(*/p.getCodigoP());
                     etnombre.setText(p.getNombreP());
                     etprecio.setText(Double.toString(p.getPrecioP()));
                 }

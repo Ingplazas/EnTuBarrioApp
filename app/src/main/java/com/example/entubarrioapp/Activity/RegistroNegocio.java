@@ -1,4 +1,4 @@
-package com.example.entubarrioapp;
+package com.example.entubarrioapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.entubarrioapp.Database.AdminSQLiteOpenHelper;
+import com.example.entubarrioapp.R;
 
 public class RegistroNegocio extends AppCompatActivity {
 
@@ -60,6 +63,8 @@ public class RegistroNegocio extends AppCompatActivity {
 
             db.insert("Negocio", null, registro);
 
+            db.execSQL("CREATE TABLE Productos" + nombreN + "(codigoP TEXT PRIMARY KEY, categoriaP TEXT, nombreP TEXT, descripcionP TEXT, precioP REAL, cantidadP INTEGER);");
+
             db.close();
             etNombreN.setText("");
             etDireccionN.setText("");
@@ -69,8 +74,6 @@ public class RegistroNegocio extends AppCompatActivity {
 
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
 
-            Intent cambio = new Intent(this, InicioSesion.class);
-            startActivity(cambio);
             finish();
         } else {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();

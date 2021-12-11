@@ -40,4 +40,16 @@
     <string name="btn_eliminar">Eliminar</string>
     <string name="btn_buscar">Buscar</string>
 
+    <!-- Ingreso Cliente -->
+    <string name="btn_SalirC">Cerrar Sesión</string>
+    <string name="tv_ProdC">Productos</string>
+    <string name="tv_NegoC">Negocios</string>
+
+    <!-- Item Producto CLiente -->
+    <string name="btn_AddCard">+ Agregar</string>
+
+    <!-- Ingreso Negocio -->
+    <string name="btn_SalirN">Cerrar Sesión</string>
+    <string name="tv_TusProd">Tus Productos</string>
+
 </resources>

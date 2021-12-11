@@ -1,20 +1,15 @@
-package com.example.entubarrioapp;
+package com.example.entubarrioapp.Activity;
 
-import static android.widget.Toast.*;
-
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.util.Objects;
+import com.example.entubarrioapp.R;
 
 public class OpcionRegistro extends AppCompatActivity {
 
