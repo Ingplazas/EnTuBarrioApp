@@ -61,6 +61,7 @@ public class CrudProducto extends AppCompatActivity {
             p.setNombreP(fila.getString(2));
             p.setPrecioP(fila.getFloat(4));
         }
+        fila.close();
         db.close();
         return p;
     }
