@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class CrudProducto extends AppCompatActivity {
     EditText etnombre, etcodigo, etprecio;
     ListView lv_producto;
     TextView tvproducto;
+    Button btnbuscar,btnguardar, btneliminar, btneditar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,10 @@ public class CrudProducto extends AppCompatActivity {
         etnombre = (EditText) findViewById(R.id.et_nombre);
         etcodigo = (EditText) findViewById(R.id.et_codigo);
         etprecio = (EditText) findViewById(R.id.et_precio);
+        btnbuscar=(Button) findViewById(R.id.btn_buscar);
+        btnguardar=(Button) findViewById(R.id.btn_registrar);
+        btneditar=(Button) findViewById(R.id.btn_editar);
+        btneliminar=(Button) findViewById(R.id.btn_eliminar);
         lv_producto = (ListView) findViewById(R.id.lv_pro);
         tvproducto=(TextView) findViewById(R.id.tv_productos);
         BuscarP();
@@ -43,34 +49,6 @@ public class CrudProducto extends AppCompatActivity {
         EliminarP();
         ModificarP();
         listar();
-    }
-
-    //metodo para activar menu en cel
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.producto_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.Guardar:
-                AgregarP();
-                break;
-
-            case R.id.Buscar:
-                BuscarP();
-                listar();
-                break;
-
-            case R.id.Editar:
-                ModificarP();
-                break;
-
-            case R.id.Eliminar:
-                EliminarP();
-                break;
-        }
-        return true;
     }
 
     public Producto buscarProducto(int codigoP){
@@ -87,22 +65,26 @@ public class CrudProducto extends AppCompatActivity {
         return p;
     }
     public void BuscarP() {
+        btnbuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etcodigo.getText().toString().isEmpty()) {
+                    Toast.makeText(CrudProducto.this, "Debe digitar codigo del producto a buscar", Toast.LENGTH_LONG).show();
 
-        if (etcodigo.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Debe digitar codigo del producto a buscar", Toast.LENGTH_LONG).show();
-
-            } else {
-            int codigo=Integer.parseInt(etcodigo.getText().toString());
-            Producto p=buscarProducto(codigo);
-            if(p==null){
-                Toast.makeText(this, "El producto no existe", Toast.LENGTH_LONG).show();
-                etcodigo.requestFocus();
+                } else {
+                    int codigo=Integer.parseInt(etcodigo.getText().toString());
+                    Producto p=buscarProducto(codigo);
+                    if(p==null){
+                        Toast.makeText(CrudProducto.this, "El producto no existe", Toast.LENGTH_LONG).show();
+                        etcodigo.requestFocus();
+                    }
+                    else {
+                        etnombre.setText(p.getNombreP());
+                        etprecio.setText(Double.toString(p.getPrecioP()));
+                    }
+                }
             }
-            else {
-                etnombre.setText(p.getNombreP());
-                etprecio.setText(Double.toString(p.getPrecioP()));
-            }
-        }
+        });
     }
 
     public long agregarProducto(Producto p) {
@@ -118,29 +100,33 @@ public class CrudProducto extends AppCompatActivity {
         return res;
     }
     public void AgregarP(){
-        if (etnombre.getText().toString().isEmpty()||etcodigo.getText().toString().isEmpty()||etprecio.getText().toString().isEmpty()){
-            Toast.makeText(this, "Debes digitar info en todos los campos", Toast.LENGTH_LONG).show();
-        } else {
-            Producto p= new Producto();
-            p.setCodigoP(Integer.parseInt(etcodigo.getText().toString()));
-            p.setNombreP(etnombre.getText().toString());
-            p.setPrecioP(Double.parseDouble(etprecio.getText().toString()));
-            long res= agregarProducto(p);
-            if(res!=-1){
-                StringBuffer buffer=new StringBuffer();
-                buffer.append("codigo: "+ p.getCodigoP()+"\n");
-                buffer.append("nombre: "+ p.getNombreP()+"\n");
-                buffer.append("precio: "+ p.getPrecioP()+"\n");
-                Mensaje("El producto se ha registrado correctamente",buffer.toString());
-                limpiar();
-                listar();
-            }else{
-                Toast.makeText(this, "El producto ya existe", Toast.LENGTH_LONG).show();
-                etcodigo.setText("");
-                etcodigo.requestFocus();
+        btnguardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etnombre.getText().toString().isEmpty()||etcodigo.getText().toString().isEmpty()||etprecio.getText().toString().isEmpty()){
+                    Toast.makeText(CrudProducto.this, "Debes digitar info en todos los campos", Toast.LENGTH_LONG).show();
+                } else {
+                    Producto p= new Producto();
+                    p.setCodigoP(Integer.parseInt(etcodigo.getText().toString()));
+                    p.setNombreP(etnombre.getText().toString());
+                    p.setPrecioP(Double.parseDouble(etprecio.getText().toString()));
+                    long res= agregarProducto(p);
+                    if(res!=-1){
+                        StringBuffer buffer=new StringBuffer();
+                        buffer.append("codigo: "+ p.getCodigoP()+"\n");
+                        buffer.append("nombre: "+ p.getNombreP()+"\n");
+                        buffer.append("precio: "+ p.getPrecioP()+"\n");
+                        Mensaje("El producto se ha registrado correctamente",buffer.toString());
+                        limpiar();
+                        listar();
+                    }else{
+                        Toast.makeText(CrudProducto.this, "El producto ya existe", Toast.LENGTH_LONG).show();
+                        etcodigo.setText("");
+                        etcodigo.requestFocus();
+                    }
+                }
             }
-
-        }
+        });
     }
 
     public void Mensaje(String titulo, String mensaje){
@@ -161,21 +147,26 @@ public class CrudProducto extends AppCompatActivity {
         return res;
     }
     public void EliminarP(){
-        if(etcodigo.getText().toString().isEmpty()){
-            Toast.makeText(this, "Debe digitar el codigo del producto a eliminar", Toast.LENGTH_LONG).show();
-        }else{
-            int codigo=Integer.parseInt(etcodigo.getText().toString());
-            int res=eliminarProducto(codigo);
-            if(res!=-1){
-                Toast.makeText(this, "El producto se eliminó correctamente", Toast.LENGTH_LONG).show();
-                limpiar();
-                listar();
-            }else{
-                Toast.makeText(this, "El producto no existe", Toast.LENGTH_LONG).show();
-                etcodigo.setText("");
-                etcodigo.requestFocus();
+        btneliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etcodigo.getText().toString().isEmpty()){
+                    Toast.makeText(CrudProducto.this, "Debe digitar el codigo del producto a eliminar", Toast.LENGTH_LONG).show();
+                }else{
+                    int codigo=Integer.parseInt(etcodigo.getText().toString());
+                    int res=eliminarProducto(codigo);
+                    if(res!=-1){
+                        Toast.makeText(CrudProducto.this, "El producto se eliminó correctamente", Toast.LENGTH_LONG).show();
+                        limpiar();
+                        listar();
+                    }else{
+                        Toast.makeText(CrudProducto.this, "El producto no existe", Toast.LENGTH_LONG).show();
+                        etcodigo.setText("");
+                        etcodigo.requestFocus();
+                    }
+                }
             }
-        }
+        });
     }
 
     public void limpiar(){
@@ -197,32 +188,38 @@ public class CrudProducto extends AppCompatActivity {
         return res;
     }
     public void ModificarP(){
-        if(etcodigo.getText().toString().isEmpty()){
-            Toast.makeText(this, "Debe digitar el codigo del producto a modificar", Toast.LENGTH_LONG).show();
-        }else {
-            if(etnombre.getText().toString().isEmpty()||etprecio.getText().toString().isEmpty()){
-                Toast.makeText(this, "Debes digitar info en todos los campos", Toast.LENGTH_LONG).show();
-            }else {
-                Producto p=new Producto();
-                p.setCodigoP(Integer.parseInt(etcodigo.getText().toString()));
-                p.setNombreP(etnombre.getText().toString());
-                p.setPrecioP(Double.parseDouble(etprecio.getText().toString()));
-                int res=modificarProducto(p);
-                if(res==1) {
-                    StringBuffer buffer = new StringBuffer();
-                    buffer.append("codigo: " + p.getCodigoP() + "\n");
-                    buffer.append("nombre: " + p.getNombreP() + "\n");
-                    buffer.append("precio: " + p.getPrecioP() + "\n");
-                    Mensaje("El producto se ha modificado correctamente", buffer.toString());
-                    limpiar();
-                    listar();
+        btneditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etcodigo.getText().toString().isEmpty()){
+                    Toast.makeText(CrudProducto.this, "Debe digitar el codigo del producto a modificar", Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(this, "El producto no existe", Toast.LENGTH_LONG).show();
-                    etcodigo.setText("");
-                    etcodigo.requestFocus();
+                    if(etnombre.getText().toString().isEmpty()||etprecio.getText().toString().isEmpty()){
+                        Toast.makeText(CrudProducto.this, "Debes digitar info en todos los campos", Toast.LENGTH_LONG).show();
+                    }else {
+                        Producto p=new Producto();
+                        p.setCodigoP(Integer.parseInt(etcodigo.getText().toString()));
+                        p.setNombreP(etnombre.getText().toString());
+                        p.setPrecioP(Double.parseDouble(etprecio.getText().toString()));
+                        int res=modificarProducto(p);
+                        if(res==1) {
+                            StringBuffer buffer = new StringBuffer();
+                            buffer.append("codigo: " + p.getCodigoP() + "\n");
+                            buffer.append("nombre: " + p.getNombreP() + "\n");
+                            buffer.append("precio: " + p.getPrecioP() + "\n");
+                            Mensaje("El producto se ha modificado correctamente", buffer.toString());
+                            limpiar();
+                            listar();
+                        }else {
+                            Toast.makeText(CrudProducto.this, "El producto no existe", Toast.LENGTH_LONG).show();
+                            etcodigo.setText("");
+                            etcodigo.requestFocus();
+                        }
+                    }
                 }
             }
-        }
+        });
+
     }
 
     public ArrayList<Producto>obtenerProducto(){
@@ -240,7 +237,7 @@ public class CrudProducto extends AppCompatActivity {
         }
         db.close();
         return lista;
-        }
+    }
 
     public void listar(){
         final ArrayList<Producto>lista=obtenerProducto();

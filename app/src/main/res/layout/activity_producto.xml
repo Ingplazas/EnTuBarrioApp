@@ -7,15 +7,28 @@
     android:orientation="vertical"
     tools:context=".CrudProducto">
 
-    <EditText
-        android:id="@+id/et_codigo"
-        android:layout_width="284dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="@string/etcodigo"
-        android:inputType="textPersonName" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_codigo"
+            android:layout_width="284dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="@string/etcodigo"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btn_buscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_buscar" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/et_nombre"
@@ -36,6 +49,33 @@
         android:ems="10"
         android:hint="@string/etprecio"
         android:inputType="textPersonName" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_guardar" />
+
+        <Button
+            android:id="@+id/btn_editar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_editar" />
+
+        <Button
+            android:id="@+id/btn_eliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_eliminar" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_productos"
@@ -58,7 +98,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/tv_codigo"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_nombre"
@@ -80,13 +121,12 @@
     <ListView
         android:id="@+id/lv_pro"
         android:layout_width="match_parent"
-        android:layout_height="237dp" />
+        android:layout_height="239dp" />
 
     <Button
         android:id="@+id/btn_regresar"
         android:layout_width="match_parent"
         android:layout_height="37dp"
-        android:onClick="Regresar"
         android:text="Regresar" />
 
 </LinearLayout>
